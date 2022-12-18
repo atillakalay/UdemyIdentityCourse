@@ -5,6 +5,9 @@
 <div class="row">
     <div class="col-md-4 offset-md-4">
         <h2>Kullanıcı Giriş Formu</h2>
+
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
         <form asp-controller="Home" asp-action="SignIn" method="post">
             <div class="row mb-3">
                 <label for="Email" class="col-md-4 col-form-label" asp-for="Email"></label>
@@ -26,7 +29,7 @@
                     Beni Hatırla
                 </label>
             </div>
-            <a type="submit" class="btn btn-success col-md-12">Giriş Yap</a>
+            <button type="submit" class="btn btn-success col-md-12">Giriş Yap</button>
         </form>
     </div>
 </div>
