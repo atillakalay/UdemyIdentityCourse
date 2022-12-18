@@ -12,12 +12,12 @@ namespace AspNetCoreIdentityApp.Web.CustomValidations
 
             if (password!.ToLower().Contains(user.UserName!.ToLower()))
             {
-                errors.Add(new() { Code = "PasswordNoContainUserName", Description = "Şifre alanı kullanıcı adı içeremez." });
+                errors.Add(new() { Code = "PasswordContainUserName", Description = "Şifre alanı kullanıcı adı içeremez." });
             }
 
             if (password!.ToLower().EndsWith("1234"))
             {
-                errors.Add(new() { Code = "PasswordNoEndsWith1234", Description = "Şifre 1, 2, 3, 4 rakamları ile bitemez" });
+                errors.Add(new() { Code = "PasswordEndsWith1234", Description = "Şifre 1, 2, 3, 4 rakamları ile bitemez" });
             }
 
             if (errors.Any())
