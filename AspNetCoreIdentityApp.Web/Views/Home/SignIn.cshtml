@@ -2,6 +2,10 @@
 @{
     ViewData["Title"] = "SignIn";
 }
+@section Scripts
+    {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
 <div class="row">
     <div class="col-md-4 offset-md-4">
         <h2>Kullanıcı Giriş Formu</h2>
@@ -30,6 +34,9 @@
                 </label>
             </div>
             <button type="submit" class="btn btn-success col-md-12">Giriş Yap</button>
+            <div>
+               <a class="mt-2 float-end btn btn-link btn-sm" asp-controller="Home" asp-action="ResetPassword">Şifremi unuttum</a>
+            </div>
         </form>
     </div>
 </div>

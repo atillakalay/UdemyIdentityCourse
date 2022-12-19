@@ -95,6 +95,10 @@ namespace AspNetCoreIdentityApp.Web.Controllers
         }
 
 
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
