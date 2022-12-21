@@ -17,10 +17,12 @@ namespace AspNetCoreIdentityApp.Web.ViewModels
         [Display(Name = "Telefon Numarası: ")]
         public string Phone { get; set; }
 
+        [DataType(DataType.Password)]
         [Required(ErrorMessage = "Şifre alanı boş bırakılamaz.")]
         [Display(Name = "Şifre: ")]
         public string Password { get; set; }
 
+        [DataType(DataType.Password)]
         [Compare(nameof(Password), ErrorMessage = "Girmiş olduğunuz şifreler eşleşmemektedir.")]
         [Required(ErrorMessage = "Şifre tekrar alanı boş bırakılamaz.")]
         [Display(Name = "Şifre Tekrar: ")]
