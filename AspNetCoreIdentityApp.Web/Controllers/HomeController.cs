@@ -134,22 +134,22 @@ namespace AspNetCoreIdentityApp.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ResetPassword(ResetPasswordViewModel request)
         {
-            var userId = TempData["userId"]!.ToString();
-            var token = TempData["token"]!.ToString();
+            var userId = TempData["userId"];
+            var token = TempData["token"];
 
             if (userId == null || token == null)
             {
                 throw new Exception("Bir hata meydana geldi!");
             }
 
-            var hasUser = await _userManager.FindByIdAsync(userId);
+            var hasUser = await _userManager.FindByIdAsync(userId.ToString());
             if (hasUser == null)
             {
                 ModelState.AddModelError(String.Empty, "Kullanıcı bulunamamıştır.");
                 return View();
             }
 
-            var result = await _userManager.ResetPasswordAsync(hasUser, token, request.Password);
+            var result = await _userManager.ResetPasswordAsync(hasUser, token.ToString(), request.Password);
 
             if (result.Succeeded)
             {
