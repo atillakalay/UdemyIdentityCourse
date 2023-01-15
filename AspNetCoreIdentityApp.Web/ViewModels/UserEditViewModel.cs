@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AspNetCoreIdentityApp.Web.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspNetCoreIdentityApp.Web.ViewModels
 {
@@ -17,6 +18,7 @@ namespace AspNetCoreIdentityApp.Web.ViewModels
         [Display(Name = "Telefon Numarası: ")]
         public string Phone { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "Doğum Tarihi: ")]
         public DateTime? BirthDate { get; set; }
 
@@ -27,6 +29,6 @@ namespace AspNetCoreIdentityApp.Web.ViewModels
         public IFormFile? Picture { get; set; }
 
         [Display(Name = "Cinsiyet: ")]
-        public byte? Gender { get; set; }
+        public Gender? Gender { get; set; }
     }
 }
