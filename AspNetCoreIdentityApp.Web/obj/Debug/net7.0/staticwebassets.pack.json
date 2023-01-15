@@ -249,6 +249,14 @@
       "PackagePath": "staticwebassets\\userPictures\\Guid.NewGuid().ToString().jpg"
     },
     {
+      "Id": "C:\\Users\\Atilla\\source\\repos\\AspNetCoreIdentityApp.Web\\AspNetCoreIdentityApp.Web\\wwwroot\\userPictures\\defaultUserPicture.webp",
+      "PackagePath": "staticwebassets\\userPictures\\defaultUserPicture.webp"
+    },
+    {
+      "Id": "C:\\Users\\Atilla\\source\\repos\\AspNetCoreIdentityApp.Web\\AspNetCoreIdentityApp.Web\\wwwroot\\userPictures\\default_user_picture.jpg",
+      "PackagePath": "staticwebassets\\userPictures\\default_user_picture.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.AspNetCoreIdentityApp.Web.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
