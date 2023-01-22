@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 @model List<AdminModel.RoleViewModel>
@@ -11,19 +10,24 @@
         <h2>Rol Listesi</h2>
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>#</th>
-                <th>Rol Adı</th>
-            </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Rol Adı</th>
+                    <th></th>
+                </tr>
             </thead>
             <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Name</td>
-                </tr>
-            }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm
+" asp-area="Admin" asp-action="RoleUpdate" asp-controller="Roles" asp-route-id="@item.Id">Güncelle</a>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
