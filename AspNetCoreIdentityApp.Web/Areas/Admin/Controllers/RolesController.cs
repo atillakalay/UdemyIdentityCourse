@@ -105,6 +105,7 @@ namespace AspNetCoreIdentityApp.Web.Areas.Admin.Controllers
         public async Task<IActionResult> AssignRoleToUser(string id)
         {
             var currentUser = (await _userManager.FindByIdAsync(id))!;
+            ViewBag.userId = id;
             var roles = await _roleManager.Roles.ToListAsync();
             var roleViewModelList = new List<AssignRoleToUserViewModel>();
             var userRoles = await _userManager.GetRolesAsync(currentUser);
@@ -123,5 +124,26 @@ namespace AspNetCoreIdentityApp.Web.Areas.Admin.Controllers
 
             return View(roleViewModelList);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AssignRoleToUser(string userId, List<AssignRoleToUserViewModel> requestList)
+        {
+            var userToAssign = (await _userManager.FindByIdAsync(userId))!;
+
+            foreach (var role in requestList)
+            {
+                if (role.Exist)
+                {
+                    await _userManager.AddToRoleAsync(userToAssign, role.Name);
+                }
+                else
+                {
+                    await _userManager.RemoveFromRoleAsync(userToAssign, role.Name);
+                }
+            }
+
+            return RedirectToAction(nameof(HomeController.UserList), "Home");
+        }
+
     }
 }
