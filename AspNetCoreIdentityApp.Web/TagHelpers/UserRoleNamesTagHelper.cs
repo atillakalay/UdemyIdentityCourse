@@ -25,7 +25,7 @@ namespace AspNetCoreIdentityApp.Web.TagHelpers
 
             userRoles.ToList().ForEach(x =>
             {
-                stringBuilder.Append(@$"<span class='badge bg-secondary' >{x.ToLower()}</span>");
+                stringBuilder.Append(@$"<span class='badge bg-secondary m-lg-1' >{x.ToLower()}</span>");
             });
             output.Content.SetHtmlContent(stringBuilder.ToString());
         }
